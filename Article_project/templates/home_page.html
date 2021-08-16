@@ -1,0 +1,527 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>MRSSV Blog</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png'%}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Bethany - v4.1.0
+  * Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<!-- lohin css -->
+<style>
+  .main-content{
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 3px 3px rgba(0,0,0,.4);
+    margin: 3em auto;
+    display: flex;
+  }
+  .company__info{
+    background-color: #008080;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+  }
+  .fa-android{
+    font-size:3em;
+  }
+  @media screen and (max-width: 640px) {
+    .main-content{width: 90%;}
+    .company__info{
+      display: none;
+    }
+    .login_form{
+      border-top-left-radius:20px;
+      border-bottom-left-radius:20px;
+    }
+  }
+  @media screen and (min-width: 642px) and (max-width:400px){
+    .main-content{width: 40%;}
+  }
+  .row > h2{
+    color:#008080;
+  }
+  .login_form{
+    background-color: #fff;
+    border-top-right-radius:0px;
+    border-bottom-right-radius:10px;
+    border-top:1px solid #ccc;
+    border-right:1px solid #ccc;
+  }
+  form{
+    padding: 0 2em;
+  }
+  .form__input{
+    width: 100%;
+    border:0px solid transparent;
+    border-radius: 0;
+    border-bottom: 1px solid #aaa;
+    padding: 1em .2em .2em;
+    padding-left: 2em;
+    outline:none;
+    margin:0.5em auto;
+    transition: all .3s ease;
+  }
+  .form__input:focus{
+    border-bottom-color: #008080;
+    box-shadow: 0 0 5px rgba(0,80,80,.4); 
+    border-radius: 4px;
+  }
+  .btn{
+    transition: all .5s ease;
+    width: 70%;
+    border-radius: 30px;
+    color:#008080;
+    font-weight: 600;
+    background-color: #fff;
+    border: 1px solid #008080;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+  .btn:hover, .btn:focus{
+    background-color: #008080;
+    color:#fff;
+  }
+  </style>
+  
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container">
+      <div class="header-container d-flex align-items-center justify-content-between px-2">
+        <div class="logo">
+          <h1 class="text-light"><a href="#hero.html"><span>MRSSV Blog</span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero"><strong>Home</strong></a></li>
+            <li><a class="nav-link scrollto" href="/admin/"><strong>Admin</strong></a></li>
+            <li><a class="nav-link scrollto" href="#register"><strong>Registration</strong></a></li>
+            <li><a class="nav-link scrollto" href="#login"><strong>Login</strong></a></li>
+            <li><a class="nav-link scrollto" href="#about"><strong>About</strong></a></li>
+            <li><a class="nav-link scrollto" href="#contact"><strong>Contact</strong></a></li>
+            <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>
+            <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+            <li><a class="nav-link scrollto" href="#team">Team</a></li>
+            <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="#">Drop Down 1</a></li>
+                <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                  <ul>
+                    <li><a href="#">Deep Drop Down 1</a></li>
+                    <li><a href="#">Deep Drop Down 2</a></li>
+                    <li><a href="#">Deep Drop Down 3</a></li>
+                    <li><a href="#">Deep Drop Down 4</a></li>
+                    <li><a href="#">Deep Drop Down 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Drop Down 2</a></li>
+                <li><a href="#">Drop Down 3</a></li>
+                <li><a href="#">Drop Down 4</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+      </div><!-- End Header Container -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
+      <h1>Publish Your Passion</h1>
+      <h2>Create a unique and beautiful blog. It’s easy and free.</h2>
+      <a href="#register" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-15">
+        
+              
+Ojas is a Cost Effective IT Services Company with 8 years of rich experience in serving its customers with a team of 500+ IT Professionals. We’re one of the fastest growing companies in India providing Services in Application Dev & Support, Identity Governance, Testing Services, Mobile Dev & Testing, Staff Augmentation and Staffing Services to our customers.
+<br>
+<p>
+We offer our services from our ODC in Hyderabad, India and cater to US, Canada and Australia.
+</p>
+<strong><h3 style="color: #008080;"> Vision & Mission</h3></strong>
+<p>“To become a reliable cost-effective IT Services Partner to our Global Customers and to create a conducive environment for employees to contribute in OJAS growth through continuous learning.”
+</p>
+<h3 style="color: #2ca898;">Our Core Values</h3>
+<ul> 
+<li>FIRST – Attention. Affection. Appreciation.</li>
+<li>ATTITUDE OF GRATITUDE – Be Thankful.</li>
+<li>NO FREE LUNCH – Nothing comes free.</li>
+<li>EMBRACE CHANGE – Change is constant.</li>
+<li>PURSUE EXCELLENCE – Doing right, first time.
+<li>INCLUSIVE GROWTH – ‘WIN-WIN' is the only way for growth.</li></ul>
+<h3 style="color: #008080;">Our Dream</h3>
+<p>To become a 100 Cr INR Revenue company by FY21</p>
+<p>
+We at Ojas believes that everything starts with Dreaming. All that we see in this world is created twice - first in our Brain and secondly in Reality. So We are dreaming to achieve a Revenue of 100 Crore INR by 2021.
+</p>
+<h2 style="color: darkblue;" >Think Big - Dream 100</h4>
+            </p>
+          
+          <!-- <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a href="#" class="btn-learn-more">Learn More</a>
+          </div>
+        </div> -->
+
+  
+    </section><!-- End About Us Section -->
+    <section id="register" class="register">
+      <h4 style="padding-left: 630px; color:purple">{{message}}</h4>
+      <h3 style="padding-left: 720px; color: green;">Register</h3>
+      <div class="container-fluid">
+        <div class="row main-content bg-success text-center">
+          <div class="col-md-4 text-center company__info">
+            <span class="company__logo"><h2><span class="fa fa-android"></span></h2></span>
+            <h4 class="company_title">Mrssv blog Register</h4>
+          </div>
+          <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+            <div class="container-fluid">
+              <!-- <div class="row"> -->
+                <center><h2>Register </h2></center>
+              <!-- </div> -->
+              <div class="row">
+                <form control="" class="form-group" action="/register/" method="POST">
+                  {%csrf_token%}
+                  <div class="row">
+                    <input type="text" name="username" id="username" class="form__input" placeholder="Username">
+                  </div>
+                  <div class="row">
+                    <input type="text" name="first_name"  class="form__input" placeholder="firstname">
+                  </div>
+                  <div class="row">
+                    <input type="text" name="last_name"  class="form__input" placeholder="lastname">
+                  </div>
+                  <div class="row">
+                    <input type="email" name="email" id="username" class="form__input"  placeholder="email">
+                  </div>
+                  <div class="row">
+                    <!-- <span class="fa fa-lock"></span> -->
+                    <input type="password" name="password" id="password" class="form__input" placeholder="Password">
+                  </div>
+                  <div class="row">
+                    <input type="checkbox" name="remember_me" id="remember_me" class="">
+                    <label for="remember_me">Remember Me!</label>
+                  </div>
+                  <div class="row">
+                      
+                    <input type="submit" value="Submit" class="btn">
+                  </div>
+                </form>
+              </div>
+              <div class="row">
+                <p>You have an account? <a href="#login">Login Here</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- login section -->
+    <section id="login" class="login">
+      <h4 style="padding-left: 630px; color:purple">{{message1}}</h4>
+      <h4 style="padding-left: 630px; color:purple">{{message2}}</h4>
+      <h4 style="padding-left: 630px; color:purple">{{message3}}</h4>
+      <div class="container-fluid">
+        <div class="row main-content bg-success text-center">
+          <div class="col-md-4 text-center company__info">
+            <span class="company__logo"><h2><span class="fa fa-android"></span></h2></span>
+            <h4 class="company_title">MRSSV Blog </h4>
+          </div>
+          <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+            <div class="container-fluid">
+              <!-- <div class="row"> -->
+                <!-- <h2>Log In</h2> -->
+                <center><h2 style="color: green;">Login </h2></center>
+              <!-- </div> -->
+              <div class="row">
+                <form control="" class="form-group" action="/login_post_view/" method="POST">
+                  {%csrf_token%}
+                  <div class="row">
+                    <input type="text" name="username" id="username" class="form__input" placeholder="Username">
+                  </div>
+                  <div class="row">
+                    <!-- <span class="fa fa-lock"></span> -->
+                    <input type="password" name="password" id="password" class="form__input" placeholder="Password">
+                  </div>
+                  <div class="row">
+                    <input type="checkbox" name="remember_me" id="remember_me" class="">
+                    <label for="remember_me">Remember Me!</label>
+                  </div>
+                  <div class="row">
+                      
+                    <input type="submit" value="Submit" class="btn">
+                  </div>
+                </form>
+              </div>
+              <div class="row">
+                 {% comment %} <a href="/password_reset/">Forgot Password</a> {% endcomment %}
+                 <a class="ml-2" href="{% url 'password_reset_form' %}">Forget Password</a>
+              </div><br>
+              <div class="row">
+                <p>Don't have an account? <a href="#register">Register Here</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+  
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Clients</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Projects</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hours Of Support</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hard Workers</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <div class="section-title">
+              <h2>Contact</h2>
+              <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+            </div>
+          </div>
+ 
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+            <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+            <div class="info mt-4">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>113A,sr nagar, Hyderabad 500038</p>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 mt-4">
+                <div class="info">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>info.mrssv@gmail.com</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="info w-100 mt-4">
+                  <i class="bi bi-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+1 929 479 7564</p>
+                </div>
+              </div>
+            </div><br>
+ 
+            <div class="col-lg-12">
+            <form action="/contact_page/" method="POST" >
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <!-- <div class="loading">Loading</div> -->
+                <!-- <div class="error-message"></div> -->
+                <!-- <div class="sent-message">Your message has been sent. Thank you!</div> -->
+              </div>
+              <div class="text-center"><button class="btn" type="submit">Send Message</button></div>
+            </form>
+          </div>
+            {{message}}
+          </div>
+        </div>
+ 
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>MRSSV</h3>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 929 479 7564<br>
+              <strong>Email:</strong> info.mrssv@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Bethany</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js'%}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js'%}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter.js'%}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js'%}"></script>
+
+</body>
+
+</html>

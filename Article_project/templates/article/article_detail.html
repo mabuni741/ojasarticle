@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	</script>
+	<script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+	</script>
+	<script src= "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+	</script>
+</head>
+
+<!-- <h1>Article Preview</h1> -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <h4 style="color: cornsilk;">MRSSV Blog</h4>
+    <ul class="navbar-nav ml-auto">
+
+        
+
+        <!-- <form  method="GET"  >
+            <input  type="search" name="search" >
+            <button  type="submit"> Search </button>
+        </form> -->
+        <li  class="nav-item">
+            <a class="nav-link" href="/dashboard/" >Dashboard</a>
+        <li class="nav-item">
+            <a class="nav-link" href="/article_create/">Create Blog</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"href="{% url 'article_update' pk=article.pk %}">Update Blog</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  href="{% url 'article_delete' pk=article.pk %}">Delete Blog</a>
+        </li>
+        {% if article.published_date %}
+    <p>published_date: {{article.published_date}}</p>
+{% else %}
+
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'publish_article' pk=article.pk %}">Publish Blog</a>
+    </li>
+{% endif %}
+
+    
+
+
+
+    <li class="nav-item">
+        <a class="nav-link" href="/logout/">Logout</a>
+    </li>
+        <!-- <li class="nav-item">
+            <a class="nav-link" href="#">
+            Logout
+            </a>
+        </li> -->
+    </ul>
+</nav>
+<div style="background-image: url();">
+</div>
+<body style="background-color:#ecdbea;">
+
+<p>Author: {{article.author}}</p>
+    <p>Topic: {{article.topic}}</p>
+    <p>Title: {{article.title}}</p>
+    <p>Data: {{article.data}}</p>
+    <p>Created_on: {{article.created_on}}</p>
+
+
+    <h3 class="subtitle" style="color:rgb(19, 161, 31)">Comments:</h3>
+
+        {% for comment in article.comments.all %}
+        <article class="media">
+            <div class="media-content">
+                <div class="content">
+                   <strong> <p style="color:red;">{{comment.name}}</p></strong>{{article.created_on}}
+                            <br>
+                            <strong>{{comment.body}}</strong>    
+                        
+                    </div>
+                </div>
+            </article>
+            {% empty %}
+             <div class="notifications">
+                 <p>No comments yet..!</p>
+             </div>
+             {% endfor %}
+            <h2 class="subtitle">Add Comment</h2>
+            <form method="post" action=".">
+                {% csrf_token %}
+                {{form.as_p}}
+        
+                <div class ="field">
+                    <div class="control">
+                        <button class ="button is_success">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+
+
+
+
+    
+
+</body>
+
+</html>

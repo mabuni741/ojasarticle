@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Including the bootstrap CDN -->
+	<link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	</script>
+	<script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+	</script>
+	<script src= "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+	</script>
+</head>
+
+<body bgcolour='red'>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <h4 style="color: cornsilk;">Update Profile</h4>
+		<ul class="navbar-nav ml-auto">
+            <!-- <form  method="GET"  >
+                <input  type="search" name="search" >
+                <button  type="submit"> Search </button>
+            </form> -->
+            <li  class="nav-item">
+				<a class="nav-link" href="#">
+				Home
+				</a>
+            <li class="nav-item">
+				<a class="nav-link" href="{% url 'article_create' %}">create Blog</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'unpublished_article' %}">unpublished Blog</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'update_profile' %}">profile view</a>
+
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+			</li>
+            <!-- <li class="nav-item">
+				<a class="nav-link" href="#">
+				Logout
+				</a>
+			</li> -->
+		</ul>
+	</nav><br>
+
+<!-- <h3>Update Profile</h3> -->
+
+
+<form  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+<!--<h4 align="center" style="color: green">{{ message }}</h4>-->
+
+<!--<h4 align="center" > <a href="{% url 'dashboard' %}" >Return to Dashboard</a> </h4>-->
+
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Including the bootstrap CDN -->
+	<link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	</script>
+	<script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+	</script>
+	<script src= "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+	</script>
+</head>
+<body bgcolour='red'>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <h4 style="color: hsl(0, 0%, 95%);">MRSSV</h4>
+		<ul class="navbar-nav ml-auto">
+            <form  method="GET"  >
+                <input  type="search" name="search" >
+                <button  type="submit"> Search </button>
+            </form>
+            <li  class="nav-item">
+				<a class="nav-link" href="/dashboard/">Dashboard</a>
+            <li class="nav-item">
+				<a class="nav-link" href="{% url 'article_create' %}">Create Blog</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'unpublished_article' %}">Unpublished Blog</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'update_profile' %}">Profile View</a>
+                {{message}}
+			</li>
+			<li class="nav-item">
+				<a class="nav-item nav-link bg-danger btn-sm" href="/logout/">Logout</a>
+			</li>
+            <!-- <li class="nav-item">
+				<a class="nav-link" href="#">
+				Logout
+				</a>
+			</li> -->
+		</ul>
+	</nav><br>
+<div style="background-image: url();">
+	</div>
+
+
+{% for article in article %}
+<h4><a href="{% url 'article_preview' pk=article.pk %}"> {{article.title}}</a></h4>
+    <p>author:{{article.author}}</p>
+    <p>{{article.data}}</p>
+
+    <p>published_date: {{article.published_date}}</p><br>
+
+{% endfor %}
+
+{% include 'pie_chart.html' %}
+</body>
+</html>
+
+
+
+
+
+
+ 
